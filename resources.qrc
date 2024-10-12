@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/secondary_car2.png</file>
+        <file>img/background.gif</file>
+        <file>img/car_image.png</file>
+        <file>img/crashed_car.png</file>
+    </qresource>
+</RCC>
