@@ -52,12 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../../game.cpp \
+SOURCES       = ../../car.cpp \
+		../../game.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp qrc_resources.cpp \
 		moc_game.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = game.o \
+OBJECTS       = car.o \
+		game.o \
 		main.o \
 		mainwindow.o \
 		qrc_resources.o \
@@ -419,9 +421,11 @@ DIST          = /home/edo/Qt/6.8.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/edo/Qt/6.8.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/edo/Qt/6.8.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/edo/Qt/6.8.0/gcc_64/mkspecs/features/lex.prf \
-		../../../../GameQT.pro ../../game.h \
+		../../../../GameQT.pro ../../car.h \
+		../../game.h \
 		../../mainwindow.h \
-		../../shared.h ../../game.cpp \
+		../../shared.h ../../car.cpp \
+		../../game.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp
 QMAKE_TARGET  = GameQT
@@ -1174,8 +1178,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/edo/Qt/6.8.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../game.h ../../mainwindow.h ../../shared.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../game.cpp ../../main.cpp ../../mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../car.h ../../game.h ../../mainwindow.h ../../shared.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../car.cpp ../../game.cpp ../../main.cpp ../../mainwindow.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1430,8 +1434,14 @@ moc_game.cpp: ../../game.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qsizepolicy.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtGui/qcursor.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtGui/qbitmap.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QSettings \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qsettings.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QElapsedTimer \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../shared.h \
+		../../car.h \
 		moc_predefs.h \
 		/home/edo/Qt/6.8.0/gcc_64/libexec/moc
 	/home/edo/Qt/6.8.0/gcc_64/libexec/moc $(DEFINES) --include /home/edo/repo/University/GUI/GameQT/build/Desktop_Qt_6_8_0-Debug/moc_predefs.h -I/home/edo/Qt/6.8.0/gcc_64/mkspecs/linux-g++ -I/home/edo/repo/University/GUI/GameQT -I/home/edo/Qt/6.8.0/gcc_64/include -I/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets -I/home/edo/Qt/6.8.0/gcc_64/include/QtGui -I/home/edo/Qt/6.8.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../game.h -o moc_game.cpp
@@ -1651,8 +1661,14 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/q20algorithm.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qfactoryinterface.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QSettings \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qsettings.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QElapsedTimer \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../shared.h \
+		../../car.h \
 		moc_predefs.h \
 		/home/edo/Qt/6.8.0/gcc_64/libexec/moc
 	/home/edo/Qt/6.8.0/gcc_64/libexec/moc $(DEFINES) --include /home/edo/repo/University/GUI/GameQT/build/Desktop_Qt_6_8_0-Debug/moc_predefs.h -I/home/edo/Qt/6.8.0/gcc_64/mkspecs/linux-g++ -I/home/edo/repo/University/GUI/GameQT -I/home/edo/Qt/6.8.0/gcc_64/include -I/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets -I/home/edo/Qt/6.8.0/gcc_64/include/QtGui -I/home/edo/Qt/6.8.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mainwindow.h -o moc_mainwindow.cpp
@@ -1672,6 +1688,9 @@ compiler_lex_clean:
 compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
+
+car.o: ../../car.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../../car.cpp
 
 game.o: ../../game.cpp ../../game.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtGui/QPainter \
@@ -1884,8 +1903,14 @@ game.o: ../../game.cpp ../../game.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qsizepolicy.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtGui/qcursor.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtGui/qbitmap.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QSettings \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qsettings.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QElapsedTimer \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../shared.h \
+		../../car.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QDebug \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QTimer \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qtimer.h \
@@ -2107,8 +2132,14 @@ main.o: ../../main.cpp ../../mainwindow.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/q20algorithm.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qfactoryinterface.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QSettings \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qsettings.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QElapsedTimer \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../shared.h \
+		../../car.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QApplication \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -2328,8 +2359,14 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/q20algorithm.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qfactoryinterface.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QSettings \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/qsettings.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QElapsedTimer \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
 		../../shared.h \
+		../../car.h \
 		ui_mainwindow.h \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtCore/QVariant \
 		/home/edo/Qt/6.8.0/gcc_64/include/QtWidgets/QApplication \
